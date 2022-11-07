@@ -232,6 +232,7 @@ try:
                         
                         cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), (10, 255, 0), 2)
 
+                        # LED indicate
                         if object_name == 'car':
                             GPIO.output(27, True)
                         else:
