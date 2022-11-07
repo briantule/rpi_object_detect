@@ -232,6 +232,11 @@ try:
                         
                         cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), (10, 255, 0), 2)
 
+                        if object_name == 'car':
+                            GPIO.output(27, True)
+                        else:
+                            GPIO.output(27, False)
+
                         # Draw label
                         object_name = labels[int(classes[i])] # Look up object name from "labels" array using class index
                         label = '%s: %d%%' % (object_name, int(scores[i]*100)) # Example: 'person: 72%'
